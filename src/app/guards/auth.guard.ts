@@ -8,11 +8,12 @@ import {
 import { Observable } from "rxjs";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { map } from "rxjs/operators";
+import { Router } from "@angular/router";
 @Injectable({
   providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-  constructor(private AFauth: AngularFireAuth) {}
+  constructor(private AFauth: AngularFireAuth, private router: Router) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -25,6 +26,7 @@ export class AuthGuard implements CanActivate {
     return this.AFauth.authState.pipe(
       map((auth) => {
         if (auth === undefined || auth === null) {
+          this.router.navigate(["/login"]);
           return false;
         } else {
           return true;
