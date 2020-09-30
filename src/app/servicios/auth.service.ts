@@ -9,6 +9,7 @@ import { promise } from "protractor";
 })
 export class AuthService {
   constructor(private AFauth: AngularFireAuth) {}
+
   login(email: string, password: string) {
     return new Promise((resolve, rejected) => {
       this.AFauth.signInWithEmailAndPassword(email, password)
@@ -19,5 +20,9 @@ export class AuthService {
           rejected(err);
         });
     });
+  }
+
+  logout() {
+    this.AFauth.signOut();
   }
 }
