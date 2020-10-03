@@ -1,22 +1,24 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="secondary">
+        <ion-title><strong>Login</strong></ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-item>
-    <ion-label position="floating">E-mail:</ion-label>
-    <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Senha:</ion-label>
-    <ion-input
-      type="password"
-      [(ngModel)]="password"
-      name="password"
-    ></ion-input>
-  </ion-item>
+<ion-content class="ion-padding">
 
-  <ion-button (click)="onSubmitLogin()" expand="block"> Entrar </ion-button>
+    <ion-item>
+        <ion-label position="stacked" class="label-float">
+            <h2>E-mail</h2>
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="email" name="email" placeholder="Insira seu e-mail aqui..."></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked" class="label-float">
+            <h2>Senha</h2>
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Insira sua senha aqui..."></ion-input>
+    </ion-item>
+
+    <ion-button class="botao1" (click)="onSubmitLogin()" expand="block" color="secondary"> Entrar </ion-button>
+
 </ion-content>
