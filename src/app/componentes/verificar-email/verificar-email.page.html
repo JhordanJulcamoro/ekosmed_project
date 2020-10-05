@@ -5,5 +5,18 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-row>
+    <ion-col>
+      <h2>Gracias por registrarte!</h2>
+      <p>Te hemos enviado un correo de confimación a <strong>EMAIL</strong></p>
+      <p>Por favor ingresa a tu correo y da click en el link de verificación</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button color="danger" (click)="onSendEmail()" expand="block">
+        Resetear verificación de email
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>

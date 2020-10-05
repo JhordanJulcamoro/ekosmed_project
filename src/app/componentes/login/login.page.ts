@@ -39,8 +39,7 @@ export class LoginPage implements OnInit {
     if (isVerified) {
       this.router.navigate(["main"]);
     } else {
-      console.log("Redirigiendo a pantalla de verificacion de email");
-      //this.router.navigate(["verificar-email"]);
+      this.router.navigate(["verificar-email"]);
     }
   }
 }

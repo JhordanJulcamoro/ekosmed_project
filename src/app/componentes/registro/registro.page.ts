@@ -31,8 +31,7 @@ export class RegistroPage implements OnInit {
     if (isVerified) {
       this.router.navigate(["home"]);
     } else {
-      console.log("Redirigiendo a pantalla de verificacion de email");
-      //this.router.navigate(["verificar-email"]);
+      this.router.navigate(["verificar-email"]);
     }
   }
 }
