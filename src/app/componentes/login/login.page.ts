@@ -35,6 +35,10 @@ export class LoginPage implements OnInit {
     }
   }
 
+  onLoginFacebook() {
+    console.log("login con Facebook");
+  }
+
   private redirectUser(isVerified: boolean): void {
     if (isVerified) {
       this.router.navigate(["main"]);
