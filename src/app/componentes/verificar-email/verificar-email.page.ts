@@ -23,6 +23,14 @@ export class VerificarEmailPage implements OnInit {
     }
   }
 
+  async onBackLogin() {
+    try {
+      await this.authSvc.logout();
+      this.router.navigate(["login"]);
+    } catch (error) {
+      console.log("Error->", error);
+    }
+  }
   ngOnDestroy(): void {
     this.authSvc.logout();
   }
