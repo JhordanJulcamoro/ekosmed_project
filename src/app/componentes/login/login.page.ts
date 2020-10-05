@@ -35,8 +35,16 @@ export class LoginPage implements OnInit {
     }
   }
 
-  onLoginFacebook() {
-    console.log("login con Facebook");
+  async onLoginFacebook() {
+    try {
+      const user = await this.authSvc.loginFacebook();
+      if (user) {
+        const isVerified = this.authSvc.isEmailVerified(user);
+        this.redirectUser(isVerified);
+      }
+    } catch (error) {
+      console.log("Error->", error);
+    }
   }
 
   private redirectUser(isVerified: boolean): void {

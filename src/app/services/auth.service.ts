@@ -45,6 +45,18 @@ export class AuthService {
     }
   }
 
+  async loginFacebook(): Promise<User> {
+    try {
+      const { user } = await this.afAuth.signInWithPopup(
+        new auth.FacebookAuthProvider()
+      );
+      this.updateUserData(user);
+      return user;
+    } catch (error) {
+      console.log("Error->", error);
+    }
+  }
+
   async register(email: string, password: string): Promise<User> {
     try {
       const { user } = await this.afAuth.createUserWithEmailAndPassword(
