@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'verificar-email',
     loadChildren: () => import('./componentes/verificar-email/verificar-email.module').then( m => m.VerificarEmailPageModule)
   },
+  {
+    path: 'recuperar-password',
+    loadChildren: () => import('./componentes/recuperar-password/recuperar-password.module').then( m => m.RecuperarPasswordPageModule)
+  },
 
 ];
 
