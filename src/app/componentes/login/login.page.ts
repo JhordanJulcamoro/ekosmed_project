@@ -12,7 +12,7 @@ export class LoginPage implements OnInit {
   constructor(private authSvc: AuthService, private router: Router) {}
 
   ngOnInit() {}
-  async onLogin(email, password) {
+  async onLogin(email: string, password: string) {
     try {
       const user = await this.authSvc.login(email, password);
       if (user) {

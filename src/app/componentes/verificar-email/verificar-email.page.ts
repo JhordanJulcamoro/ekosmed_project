@@ -1,4 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { Observable } from "rxjs";
+import { AuthService } from "../../services/auth.service";
+import { User } from "../../shared/user.interface";
 
 @Component({
   selector: "app-verificar-email",
@@ -6,10 +10,20 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./verificar-email.page.scss"],
 })
 export class VerificarEmailPage implements OnInit {
-  constructor() {}
+  user$: Observable<User> = this.authSvc.afAuth.user;
+  constructor(private authSvc: AuthService, private router: Router) {}
 
   ngOnInit() {}
-  onSendEmail() {
-    console.log("Re-envio de verificación de email");
+  async onSendEmail() {
+    try {
+      this.authSvc.sendVerificationEmail();
+      this.router.navigate(["login"]);
+    } catch (error) {
+      console.log("Error->", error);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.authSvc.logout();
   }
 }

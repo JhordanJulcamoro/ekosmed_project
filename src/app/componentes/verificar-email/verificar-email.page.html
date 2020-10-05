@@ -4,12 +4,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-row>
+<ion-content *ngIf="user$ | async as user"
+  ><ion-row>
     <ion-col>
       <h2>Gracias por registrarte!</h2>
-      <p>Te hemos enviado un correo de confimación a <strong>EMAIL</strong></p>
+      <p>
+        Te hemos enviado un correo de confimación a
+        <strong>{{user.email}}</strong>
+      </p>
       <p>Por favor ingresa a tu correo y da click en el link de verificación</p>
+      <p>
+        Si no recibiste el correo de verificación con el enlace entonces da
+        click en el siguiente botón:
+      </p>
     </ion-col>
   </ion-row>
   <ion-row>
