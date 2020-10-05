@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "./guards/auth.guard";
+import { NoAuthGuard } from "./guards/no-auth.guard";
 const routes: Routes = [
   {
     path: "home",
@@ -16,6 +17,7 @@ const routes: Routes = [
     path: "login",
     loadChildren: () =>
       import("./componentes/login/login.module").then((m) => m.LoginPageModule),
+    canActivate: [NoAuthGuard],
   },
   {
     path: "main",
@@ -29,6 +31,7 @@ const routes: Routes = [
       import("./componentes/registro/registro.module").then(
         (m) => m.RegistroPageModule
       ),
+    canActivate: [NoAuthGuard],
   },
   {
     path: "verificar-email",
@@ -36,6 +39,7 @@ const routes: Routes = [
       import("./componentes/verificar-email/verificar-email.module").then(
         (m) => m.VerificarEmailPageModule
       ),
+    //canActivate: [NoAuthGuard],
   },
   {
     path: "recuperar-password",
