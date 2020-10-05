@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.page.html',
-  styleUrls: ['./main.page.scss'],
+  selector: "app-main",
+  templateUrl: "./main.page.html",
+  styleUrls: ["./main.page.scss"],
 })
 export class MainPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  onlogout() {
+    console.log("Usted se esta deslogueando!");
   }
-
 }
