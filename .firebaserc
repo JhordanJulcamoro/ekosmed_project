@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ekosmed-58431": {
+      "hosting": {
+        "app": [
+          "ekosmed-58431"
+        ]
+      }
+    }
+  }
+}
