@@ -1,3 +1,7 @@
+ion-content {
+    --ion-background-color: #f4fbfcee;
+}
+
 .google {
     color: black;
 }
@@ -7,12 +11,45 @@ ion-title {
     font-size: 25px;
 }
 
+h1 {
+    padding-left: 14px;
+    color: #1b9fc0dc;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
+    color: #1b9fc0d3;
+    font-weight: bolder;
+}
+
+h3 {
+    margin: auto;
+    font-size: 15px;
+    width: 144px;
+    padding-top: 10px;
 }
 
 .botao1 {
-    font-size: 20px;
-    padding-top: 20px;
+    font-size: 16px;
+    margin: auto;
+    width: 250px;
+    height: 50px;
+    text-transform: capitalize;
+    color: #f4fbfcee;
+    border-radius: solid 2px red;
+}
+
+a {
+    opacity: 90%;
+    text-decoration: none;
+}
+
+a:active {
+    color: #1e75afe1;
+}
+
+ion-input:focus {
+    color: black;
 }
