@@ -47,7 +47,11 @@ const routes: Routes = [
       import("./componentes/recuperar-password/recuperar-password.module").then(
         (m) => m.RecuperarPasswordPageModule
       ),
+  },  {
+    path: 'init',
+    loadChildren: () => import('./componentes/init/init.module').then( m => m.InitPageModule)
   },
+
 ];
 
 @NgModule({
