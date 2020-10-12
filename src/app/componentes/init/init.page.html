@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>init</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Init</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content fullscreen>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Bem-vindo ao <span>Ekos</span><span>Med</span>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" routerLink="/login"> Entrar </ion-button>
+      <ion-button expand="block" routerLink="/registro">
+        Cadastre - se
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
