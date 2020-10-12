@@ -1,13 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Registro</ion-title>
+    <ion-title>Cadastrar-se</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <form>
     <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
+      <ion-label position="floating">Nomes:</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="nomes"
+        name="nomes"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Sobrenomes:</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="sobreNomes"
+        name="sobreNomes"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">E-mail:</ion-label>
       <ion-input
         type="text"
         [(ngModel)]="email"
@@ -16,7 +34,7 @@
       ></ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">Senha:</ion-label>
       <ion-input
         type="password"
         [(ngModel)]="password"
@@ -24,10 +42,22 @@
         required
       ></ion-input>
     </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Repetir senha:</ion-label>
+      <ion-input
+        type="passwordRepeat"
+        [(ngModel)]="passwordRepeat"
+        name="passwordRepeat"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <p>Aceito os <a>termos</a> e <a>condições.</a></p>
+    </ion-item>
     <ion-row>
       <ion-col>
         <ion-button (click)="onRegister(email,password)" expand="block"
-          >Registro</ion-button
+          >Cadastrar-se</ion-button
         >
       </ion-col>
     </ion-row>

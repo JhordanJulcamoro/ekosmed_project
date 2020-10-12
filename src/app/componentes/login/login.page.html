@@ -1,40 +1,60 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form>
+  <form [formGroup]="fGroup">
     <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
+      <ion-label position="floating">E-mail:</ion-label>
       <ion-input
-        type="text"
-        [(ngModel)]="email"
-        name="email"
+        type="email"
+        placeholder="Digite seu e-mail"
+        formControlName="email"
         required
       ></ion-input>
+      <div *ngIf="fGroup.controls.email.errors">
+        <p *ngIf="fGroup.controls.email.errors.required">
+          Esse campo é obrigatório!
+        </p>
+        <p *ngIf="fGroup.controls.email.errors.pattern">
+          Esse campo está mal formatado!
+        </p>
+      </div>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">Senha:</ion-label>
       <ion-input
         type="password"
-        [(ngModel)]="password"
-        name="password"
+        placeholder="Digite sua senha"
+        formControlName="password"
         required
       ></ion-input>
+      <div *ngIf="fGroup.controls.password.errors">
+        <p *ngIf="fGroup.controls.password.errors.required">
+          Esse campo é obrigatório!
+        </p>
+        <p *ngIf="fGroup.controls.password.errors.minlength">
+          Esse campo deve ter no mínimo 6 carateres!
+        </p>
+      </div>
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button (click)="onLogin(email,password)" expand="block">
-          Login
+        <ion-button
+          (click)="onLogin()"
+          expand="block"
+          [disabled]="!fGroup.valid"
+        >
+          Entrar
         </ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <p class="ion-text-end">
-          <a routerLink="/recuperar-password">Olvidé mi contraseña</a>
+          <a routerLink="/recuperar-password">Esqueci minha senha</a>
         </p>
       </ion-col>
     </ion-row>
@@ -46,17 +66,18 @@
         >
       </ion-col>
     </ion-row>
-    <!-- <ion-row>
+    <ion-row>
       <ion-col>
         <ion-button color="dark" (click)="onLoginFacebook()" expand="block"
           >Login com Facebook</ion-button
         >
       </ion-col>
-    </ion-row> -->
+    </ion-row>
     <ion-row>
       <ion-col>
         <p class="ion-text-end">
-          <a routerLink="/registro">Crear una cuenta.</a>
+          Não tem conta?
+          <a routerLink="/registro">Cadastrar-se</a>
         </p>
       </ion-col>
     </ion-row>

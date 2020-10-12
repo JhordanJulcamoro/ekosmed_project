@@ -7,8 +7,11 @@ import { AuthService } from "../../services/auth.service";
   styleUrls: ["./registro.page.scss"],
 })
 export class RegistroPage implements OnInit {
+  nomes: string;
+  sobreNomes: string;
   email: string;
   password: string;
+  passwordRepeat: string;
 
   constructor(private authSvc: AuthService, private router: Router) {}
 

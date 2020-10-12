@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>main</ion-title>
+    <ion-title>Olá, <span>User</span></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="onlogout()"> Cerrar sesión </ion-button>
+  <ion-card>
+    <ion-card-content expand="block">
+      Fale com Ekos sobre as dores nas costas que você tem
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content expand="block"> O que ê Quiropraxia? </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content expand="block"> Casos clínicos </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content expand="block"> Dicas </ion-card-content>
+  </ion-card>
+  <ion-button (click)="onlogout()" expand="block"> Sair </ion-button>
 </ion-content>
