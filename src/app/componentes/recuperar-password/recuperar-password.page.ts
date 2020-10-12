@@ -14,11 +14,11 @@ export class RecuperarPasswordPage implements OnInit {
   async onResetPassword(email: string) {
     try {
       await this.authSvc.resetPassword(email);
-      //SI EXISTE EL CORREO - TE ENVÍA UN LINK DE RESETEO DE PASSWORD A LA CUENTA
-      //SI NO EXISTE DA ERROR
+      this.authSvc.presentAlert("Sucesso", "O envio foi satisfatório.");
       this.router.navigate(["/login"]);
     } catch (error) {
-      console.log("Error->", error);
+      // console.log("Error->", error);
+      this.authSvc.errorsCase(error);
     }
   }
 }

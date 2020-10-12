@@ -34,6 +34,7 @@ export class AuthService {
 
   async resetPassword(email: string): Promise<void> {
     try {
+      // this.presentAlert("Sucess", "O envío foi satisfatorio");
       return this.afAuth.sendPasswordResetEmail(email);
     } catch (error) {
       // console.log("Error ->", error);
@@ -134,7 +135,7 @@ export class AuthService {
       case "There is no user record corresponding to this identifier. The user may have been deleted.":
         this.presentAlert(
           "Error",
-          "Este email não está registrado em nosso banco de dados."
+          "Este email não está registrado em nosso banco de dados, tente novamente."
         );
         break;
       case "The password is invalid or the user does not have a password.":
