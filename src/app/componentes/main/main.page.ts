@@ -14,7 +14,7 @@ export class MainPage implements OnInit {
   async onlogout() {
     try {
       await this.authSvc.logout();
-      this.router.navigate(["/login"]);
+      this.router.navigate(["/init"]);
       console.log("Cerrando sesión");
     } catch (error) {
       console.log("Error->", error);
