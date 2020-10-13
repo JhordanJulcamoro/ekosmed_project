@@ -3,4 +3,8 @@ export interface User {
   email: string;
   displayName: string;
   emailVerified: boolean;
+  // phoneNumber: string;
+  // photoURL: string;
+  // name: string;
+  // sobrenome: string;
 }
