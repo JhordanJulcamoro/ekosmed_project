@@ -25,10 +25,10 @@
             </ion-label>
             <ion-input type="email" placeholder="usuario@ekosmed.com" formControlName="email" required></ion-input>
             <div *ngIf="fGroup.controls.email.errors">
-                <p *ngIf="fGroup.controls.email.errors.required">
+                <p class="alert" *ngIf="fGroup.controls.email.errors.required">
                     Esse campo é obrigatório!
                 </p>
-                <p *ngIf="fGroup.controls.email.errors.pattern">
+                <p class="alert" *ngIf="fGroup.controls.email.errors.pattern">
                     Esse campo está mal formatado!
                 </p>
             </div>
@@ -39,10 +39,10 @@
             </ion-label>
             <ion-input type="password" placeholder="Digite sua senha" formControlName="password" required></ion-input>
             <div *ngIf="fGroup.controls.password.errors">
-                <p *ngIf="fGroup.controls.password.errors.required">
+                <p class="alert" *ngIf="fGroup.controls.password.errors.required">
                     Esse campo é obrigatório!
                 </p>
-                <p *ngIf="fGroup.controls.password.errors.minlength">
+                <p class="alert" *ngIf="fGroup.controls.password.errors.minlength">
                     Esse campo deve ter no mínimo 6 carateres!
                 </p>
             </div>
