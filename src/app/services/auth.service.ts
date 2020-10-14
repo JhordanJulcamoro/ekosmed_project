@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { User } from "../shared/user.interface";
-import { AlertBody } from "../shared/alert.interface";
 import { auth } from "firebase/app";
 import {
   AngularFirestore,
@@ -15,7 +14,6 @@ import { AlertController } from "@ionic/angular";
 })
 export class AuthService {
   public user$: Observable<User>;
-  public alertBody$: Observable<AlertBody>;
 
   constructor(
     public afAuth: AngularFireAuth,
