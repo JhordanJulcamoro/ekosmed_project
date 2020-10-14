@@ -1,122 +1,107 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button routerLink="/login">
-        <ion-icon name="arrow-back-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Cadastrar-se</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-button routerLink="/login">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title><strong>Cadastro</strong></ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="fGroup">
-    <ion-item lines="full">
-      <ion-label position="floating">Nomes:</ion-label>
-      <ion-input
-        type="text"
-        formControlName="nomes"
-        placeholder="Digite seus nomes"
-        required
-      ></ion-input>
-      <div *ngIf="fGroup.controls.nomes.errors">
-        <p *ngIf="fGroup.controls.nomes.errors.required">
-          Esse campo é obrigatório!
-        </p>
-        <p *ngIf="fGroup.controls.nomes.errors.minlength">
-          Esse campo deve ter no mínimo 2 carateres!
-        </p>
-      </div>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Sobrenomes:</ion-label>
-      <ion-input
-        type="text"
-        formControlName="sobrenomes"
-        placeholder="Digite seus sobrenomes"
-        required
-      ></ion-input>
-      <div *ngIf="fGroup.controls.sobrenomes.errors">
-        <p *ngIf="fGroup.controls.sobrenomes.errors.required">
-          Esse campo é obrigatório!
-        </p>
-        <p *ngIf="fGroup.controls.sobrenomes.errors.minlength">
-          Esse campo deve ter no mínimo 4 carateres!
-        </p>
-      </div>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">E-mail:</ion-label>
-      <ion-input
-        type="enail"
-        formControlName="email"
-        placeholder="Digite seu e-mail"
-        required
-      ></ion-input>
-      <div *ngIf="fGroup.controls.email.errors">
-        <p *ngIf="fGroup.controls.email.errors.required">
-          Esse campo é obrigatório!
-        </p>
-        <p *ngIf="fGroup.controls.email.errors.pattern">
-          Esse campo está mal formatado!
-        </p>
-      </div>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Senha:</ion-label>
-      <ion-input
-        type="password"
-        formControlName="password"
-        placeholder="Digite sua senha"
-        required
-      ></ion-input>
-      <div *ngIf="fGroup.controls.password.errors">
-        <p *ngIf="fGroup.controls.password.errors.required">
-          Esse campo é obrigatório!
-        </p>
-        <p *ngIf="fGroup.controls.password.errors.minlength">
-          Esse campo deve ter no mínimo 6 carateres!
-        </p>
-      </div>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Repetir senha:</ion-label>
-      <ion-input
-        type="password"
-        formControlName="confirmPassword"
-        placeholder="Digite novamente sua senha"
-        required
-      ></ion-input>
-      <div *ngIf="fGroup.controls.confirmPassword.errors">
-        <p *ngIf="fGroup.controls.confirmPassword.errors.required">
-          Esse campo é obrigatório!
-        </p>
-        <p *ngIf="fGroup.controls.confirmPassword.errors.minlength">
-          Esse campo deve ter no mínimo 6 carateres!
-        </p>
-      </div>
-    </ion-item>
-    <ion-item>
-      <ion-checkbox formControlName="termConditions" required> </ion-checkbox>
-      <ion-label position="inline"
-        >Aceito os <a> termos e condições. </a></ion-label
-      >
-      <div *ngIf="fGroup.controls.termConditions.errors">
-        <p *ngIf="fGroup.controls.termConditions.errors.required">
-          Esse campo é obrigatório!
-        </p>
-      </div>
-    </ion-item>
-
+<ion-content class="ion-content">
     <ion-row>
-      <ion-col>
-        <ion-button
-          (click)="onRegister()"
-          expand="block"
-          [disabled]="!fGroup.valid"
-          >Cadastrar-se</ion-button
-        >
-      </ion-col>
+        <ion-col size="8">
+            <h1><strong>Dados de Acesso</strong></h1>
+        </ion-col>
+        <ion-col size="4">
+            <ion-img class="ion-align-self-end" src="../assets/img/logo.PNG" alt="logotipo"></ion-img>
+        </ion-col>
     </ion-row>
-  </form>
+    <form [formGroup]="fGroup">
+        <ion-item lines="full">
+            <ion-label position="floating">
+                <h2>Nome</h2>
+            </ion-label>
+            <ion-input type="text" formControlName="nomes" placeholder="Digite seu nome" required></ion-input>
+            <div class="alert" *ngIf="fGroup.controls.nomes.errors">
+                <p *ngIf="fGroup.controls.nomes.errors.required">
+                    Esse campo é obrigatório!
+                </p>
+                <p class="alert" *ngIf="fGroup.controls.nomes.errors.minlength">
+                    Esse campo deve ter no mínimo 2 carateres!
+                </p>
+            </div>
+        </ion-item>
+        <ion-item lines="full">
+            <ion-label position="floating">
+                <h2>Sobrenome</h2>
+            </ion-label>
+            <ion-input type="text" formControlName="sobrenomes" placeholder="Digite seu sobrenome" required></ion-input>
+            <div class="alert" *ngIf="fGroup.controls.sobrenomes.errors">
+                <p class="alert" *ngIf="fGroup.controls.sobrenomes.errors.required">
+                    Esse campo é obrigatório!
+                </p>
+                <p class="alert" *ngIf="fGroup.controls.sobrenomes.errors.minlength">
+                    Esse campo deve ter no mínimo 4 carateres!
+                </p>
+            </div>
+        </ion-item>
+        <ion-item lines="full">
+            <ion-label position="floating">
+                <h2>E-mail</h2>
+            </ion-label>
+            <ion-input type="enail" formControlName="email" placeholder="Digite seu e-mail" required></ion-input>
+            <div class="alert" *ngIf="fGroup.controls.email.errors">
+                <p class="alert" *ngIf="fGroup.controls.email.errors.required">
+                    Esse campo é obrigatório!
+                </p>
+                <p class="alert" *ngIf="fGroup.controls.email.errors.pattern">
+                    Esse campo está mal formatado!
+                </p>
+            </div>
+        </ion-item>
+        <ion-item lines="full">
+            <ion-label position="floating">
+                <h2>Senha</h2>
+            </ion-label>
+            <ion-input type="password" formControlName="password" placeholder="Digite sua senha" required></ion-input>
+            <div *ngIf="fGroup.controls.password.errors">
+                <p class="alert" *ngIf="fGroup.controls.password.errors.required">
+                    Esse campo é obrigatório!
+                </p>
+                <p class="alert" *ngIf="fGroup.controls.password.errors.minlength">
+                    Esse campo deve ter no mínimo 6 carateres!
+                </p>
+            </div>
+        </ion-item>
+        <ion-item lines="full">
+            <ion-label position="floating">
+                <h2>Confirme sua senha</h2>
+            </ion-label>
+            <ion-input type="password" formControlName="confirmPassword" placeholder="Digite sua senha novamente" required></ion-input>
+            <div *ngIf="fGroup.controls.confirmPassword.errors">
+                <p class="alert" *ngIf="fGroup.controls.confirmPassword.errors.required">
+                    Esse campo é obrigatório!
+                </p>
+                <p class="alert" *ngIf="fGroup.controls.confirmPassword.errors.minlength">
+                    Esse campo deve ter no mínimo 6 carateres!
+                </p>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-checkbox formControlName="termConditions" required slot="start"> </ion-checkbox>
+            <ion-label position="inline" class="ion-text-center">Aceito os <a> termos e condições. </a></ion-label>
+            <div *ngIf="fGroup.controls.termConditions.errors">
+                <p class="alert" *ngIf="fGroup.controls.termConditions.errors.required">
+                    Esse campo é obrigatório!
+                </p>
+            </div>
+        </ion-item>
+        <ion-row>
+            <ion-col>
+                <ion-button (click)="onRegister()" expand="block" shape="round" [disabled]="!fGroup.valid">Cadastrar-se</ion-button>
+            </ion-col>
+        </ion-row>
+    </form>
 </ion-content>
