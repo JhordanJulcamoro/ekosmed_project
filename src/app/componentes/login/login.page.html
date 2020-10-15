@@ -1,64 +1,91 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-button routerLink="/init">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title align="start"><strong>Login</strong></ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input
-        type="text"
-        [(ngModel)]="email"
-        name="email"
-        required
-      ></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        required
-      ></ion-input>
-    </ion-item>
+<ion-content class="ion-padding">
     <ion-row>
-      <ion-col>
-        <ion-button (click)="onLogin(email,password)" expand="block">
-          Login
-        </ion-button>
-      </ion-col>
+        <ion-col>
+            <h1><strong>Ingressar</strong></h1>
+        </ion-col>
+        <ion-col>
+            <ion-img class="ion-align-self-end" src="../assets/img/logo.PNG" alt="logotipo"></ion-img>
+        </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-        <p class="ion-text-end">
-          <a routerLink="/recuperar-password">Olvidé mi contraseña</a>
-        </p>
-      </ion-col>
-    </ion-row>
-    <span class="divider line one-line">or</span>
-    <ion-row>
-      <ion-col>
-        <ion-button color="danger" (click)="onLoginGoogle()" expand="block"
-          >Login com Google</ion-button
-        >
-      </ion-col>
-    </ion-row>
-    <!-- <ion-row>
-      <ion-col>
-        <ion-button color="dark" (click)="onLoginFacebook()" expand="block"
-          >Login com Facebook</ion-button
-        >
-      </ion-col>
-    </ion-row> -->
-    <ion-row>
-      <ion-col>
-        <p class="ion-text-end">
-          <a routerLink="/registro">Crear una cuenta.</a>
-        </p>
-      </ion-col>
-    </ion-row>
-  </form>
+    <form [formGroup]="fGroup">
+        <ion-item lines="full">
+            <ion-label position="floating">
+                <h2>E-mail</h2>
+            </ion-label>
+            <ion-input type="email" placeholder="usuario@ekosmed.com" formControlName="email" required></ion-input>
+            <div *ngIf="fGroup.controls.email.errors">
+                <p class="alert" *ngIf="fGroup.controls.email.errors.required">
+                    Esse campo é obrigatório!
+                </p>
+                <p class="alert" *ngIf="fGroup.controls.email.errors.pattern">
+                    Esse campo está mal formatado!
+                </p>
+            </div>
+        </ion-item>
+        <ion-item lines="full">
+            <ion-label position="floating">
+                <h2>Senha</h2>
+            </ion-label>
+            <ion-input type="password" placeholder="Digite sua senha" formControlName="password" required></ion-input>
+            <div *ngIf="fGroup.controls.password.errors">
+                <p class="alert" *ngIf="fGroup.controls.password.errors.required">
+                    Esse campo é obrigatório!
+                </p>
+                <p class="alert" *ngIf="fGroup.controls.password.errors.minlength">
+                    Esse campo deve ter no mínimo 6 carateres!
+                </p>
+            </div>
+        </ion-item>
+        <ion-row>
+            <ion-col>
+                <ion-button class="botao1" (click)="onLogin()" expand="block" shape="round" color="tertiary" [disabled]="!fGroup.valid">
+                    Entrar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-align-items-end ion-no-margin">
+            <ion-col class="ion-align-self-start">
+                <a routerLink="/recuperar-password">
+                    <h3 class="ion-text-center">Esqueci minha senha</h3>
+                </a>
+            </ion-col>
+        </ion-row>
+        <br>
+        <ion-row>
+            <ion-col class="ion-text-center ion-align-self-end">
+                ou
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button color="danger" (click)="onLoginGoogle()" expand="block" shape="round">Login com Google</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button color="dark" (click)="onLoginFacebook()" expand="block" shape="round">Login com Facebook</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <p class="ion-text-center">
+                    Não tem conta?
+                    <a routerLink="/registro">
+                        <h3>Cadastrar-se</h3>
+                    </a>
+                </p>
+            </ion-col>
+        </ion-row>
+    </form>
 </ion-content>

@@ -8,13 +8,18 @@ import {
 } from "@angular/fire/firestore";
 import { Observable, of } from "rxjs";
 import { switchMap } from "rxjs/operators";
+import { AlertController } from "@ionic/angular";
 @Injectable({
   providedIn: "root",
 })
 export class AuthService {
   public user$: Observable<User>;
 
-  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
+  constructor(
+    public afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private alertController: AlertController
+  ) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if (user) {
@@ -27,9 +32,11 @@ export class AuthService {
 
   async resetPassword(email: string): Promise<void> {
     try {
+      // this.presentAlert("Sucess", "O envío foi satisfatorio");
       return this.afAuth.sendPasswordResetEmail(email);
     } catch (error) {
-      console.log("Error->", Error);
+      // console.log("Error ->", error);
+      this.errorsCase(error);
     }
   }
 
@@ -41,7 +48,8 @@ export class AuthService {
       this.updateUserData(user);
       return user;
     } catch (error) {
-      console.log("Error->", error);
+      // console.log("Error ->", error);
+      this.errorsCase(error);
     }
   }
 
@@ -53,7 +61,8 @@ export class AuthService {
       this.updateUserData(user);
       return user;
     } catch (error) {
-      console.log("Error->", error);
+      // console.log("Error ->", error);
+      this.errorsCase(error);
     }
   }
 
@@ -66,7 +75,8 @@ export class AuthService {
       await this.sendVerificationEmail();
       return user;
     } catch (error) {
-      console.log("Erro->", error);
+      // console.log("Error ->", error);
+      this.errorsCase(error);
     }
   }
 
@@ -79,7 +89,7 @@ export class AuthService {
       this.updateUserData(user);
       return user;
     } catch (error) {
-      console.log("Error->", error);
+      this.errorsCase(error);
     }
   }
 
@@ -87,7 +97,8 @@ export class AuthService {
     try {
       return (await this.afAuth.currentUser).sendEmailVerification();
     } catch (error) {
-      console.log("Error->", error);
+      // console.log("Error ->", error);
+      this.errorsCase(error);
     }
   }
 
@@ -99,7 +110,8 @@ export class AuthService {
     try {
       await this.afAuth.signOut();
     } catch (error) {
-      console.log("Error ->", error);
+      // console.log("Error ->", error);
+      this.errorsCase(error);
     }
   }
 
@@ -114,5 +126,38 @@ export class AuthService {
       displayName: user.displayName,
     };
     return userRef.set(data, { merge: true });
+  }
+
+  errorsCase(error: Error) {
+    switch (error.message) {
+      case "There is no user record corresponding to this identifier. The user may have been deleted.":
+        this.presentAlert(
+          "Error",
+          "Este email não está registrado em nosso banco de dados, tente novamente."
+        );
+        break;
+      case "The password is invalid or the user does not have a password.":
+        this.presentAlert("Error", "A senha é inválida.");
+        break;
+      case "A network error (such as timeout, interrupted connection or unreachable host) has occurred.":
+        this.presentAlert(
+          "Error",
+          "Ocorreu um erro de rede (como tempo limite, conexão interrompida ou host inacessível). Verifique sua conexão de internet."
+        );
+        break;
+      default:
+        this.presentAlert("Error", "Entre em contato com um assistente.");
+    }
+  }
+  async presentAlert(alertHeader: string, alertMessage: string) {
+    const alert = await this.alertController.create({
+      cssClass: "my-custom-class",
+      header: alertHeader, //"Alert",
+      // subHeader: alertSubHeader, //"Subtitle",
+      message: alertMessage, //"This is an alert message.",
+      buttons: ["OK"],
+    });
+
+    await alert.present();
   }
 }
