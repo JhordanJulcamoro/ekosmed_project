@@ -1,3 +1,46 @@
 .my-custom-class {
-  --background: #e5e5e5;
+    --background: #e5e5e5;
+}
+
+ion-content {
+    --ion-background-color: #f4fbfcee;
+}
+
+ion-img {
+    width: 130px;
+    padding-left: 40px;
+}
+
+h1 {
+    padding-left: 14px;
+    color: #1b9fc0dc;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: #1b9fc0d3;
+    font-weight: bolder;
+}
+
+h3 {
+    margin: auto;
+    font-size: 15px;
+    width: 144px;
+    padding-top: 10px;
+    opacity: 90%;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3:active {
+    color: #01fc61e1;
+}
+
+.alert {
+    font-size: 13px;
+    color: red;
 }
