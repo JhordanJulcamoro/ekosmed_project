@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Olá, <span>User</span></ion-title>
+  <ion-toolbar *ngIf="user$ | async as user">
+    <ion-title>Olá, <span>{{user.displayName}}</span></ion-title>
     <ion-buttons slot="end">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
@@ -16,11 +16,10 @@
   <ion-card>
     <ion-card-content expand="block"> O que ê Quiropraxia? </ion-card-content>
   </ion-card>
-  <ion-card>
+  <ion-card routerLink="/casos-clinicos">
     <ion-card-content expand="block"> Casos clínicos </ion-card-content>
   </ion-card>
   <ion-card>
     <ion-card-content expand="block"> Dicas </ion-card-content>
   </ion-card>
-  <ion-button (click)="onlogout()" expand="block"> Sair </ion-button>
 </ion-content>
