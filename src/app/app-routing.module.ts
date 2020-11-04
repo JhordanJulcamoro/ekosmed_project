@@ -53,7 +53,11 @@ const routes: Routes = [
     loadChildren: () =>
       import("./componentes/init/init.module").then((m) => m.InitPageModule),
     canActivate: [NoAuthGuard],
+  },  {
+    path: 'casos-clinicos',
+    loadChildren: () => import('./componentes/casos-clinicos/casos-clinicos.module').then( m => m.CasosClinicosPageModule)
   },
+
 ];
 
 @NgModule({
