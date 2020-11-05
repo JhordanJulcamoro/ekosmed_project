@@ -1,26 +1,10 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-
-export interface User {
-  login: string;
-  id: number;
-  node_id: string;
-  avatar_url: string;
-  gravatar_id: string;
-  url: string;
-  html_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  starred_url: string;
-  subscriptions_url: string;
-  organizations_url: string;
-  repos_url: string;
-  events_url: string;
-  received_events_url: string;
-  type: string;
-  site_admin: boolean;
-}
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from "@angular/fire/firestore";
+import { Observable } from "rxjs";
+import { CasosClinicos } from "../../shared/casosclinicos.interface";
 
 @Component({
   selector: "app-casos-clinicos",
@@ -28,18 +12,17 @@ export interface User {
   styleUrls: ["./casos-clinicos.page.scss"],
 })
 export class CasosClinicosPage implements OnInit {
-  public question = "";
-  public users: User[];
+  private casosCollection: AngularFirestoreCollection<CasosClinicos>;
+  casosItems: Observable<CasosClinicos[]>;
 
-  constructor(private http: HttpClient) {
-    this.chamarHttp();
+  constructor(private afs: AngularFirestore) {
+    this.chamarData();
   }
 
   ngOnInit() {}
 
-  async chamarHttp() {
-    const url =
-      "https://api.github.com/repos/mcf1110/ionic-anhembi-2020-2/stargazers";
-    this.users = (await this.http.get(url).toPromise()) as User[];
+  async chamarData() {
+    this.casosCollection = this.afs.collection<CasosClinicos>("casos-clinicos");
+    this.casosItems = this.casosCollection.valueChanges();
   }
 }

@@ -9,20 +9,57 @@
 </ion-header>
 
 <ion-content>
-  <ion-card
-    *ngFor="let u of users"
+  <ion-card *ngFor="let u of casosItems  | async" button>
+    <!-- <ion-card
+    *ngFor="let u of casosItems  | async"
     button
-    [routerLink]="['/casoclinico',u.login]"
-  >
+    [routerLink]="['/casoclinico',u.id]"
+  > -->
     <ion-card-header>
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">
           <ion-avatar>
-            <img [src]="u.avatar_url" alt="" />
+            <img [src]="u.imagen" alt="" />
           </ion-avatar>
         </ion-col>
         <ion-col>
-          <ion-card-title>{{u.login}}</ion-card-title>
+          <ion-card-title>{{u.titulo}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-card-subtitle>Descripção: </ion-card-subtitle>
+          <ion-card-content> {{u.descripcion}} </ion-card-content>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-card-subtitle>Sìntomas: </ion-card-subtitle>
+          <ul>
+            <li>{{u.sintomas.sintoma_1}}</li>
+            <li>{{u.sintomas.sintoma_2}}</li>
+            <li>{{u.sintomas.sintoma_3}}</li>
+            <li>{{u.sintomas.sintoma_4}}</li>
+          </ul>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-card-subtitle>Tratamientos: </ion-card-subtitle>
+          <ion-card-content> {{u.tratamientos}} </ion-card-content>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-card-subtitle>Cuidados Importantes: </ion-card-subtitle>
+          <ion-card-content> {{u.cuidadosimportantes}} </ion-card-content>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-card-subtitle>Contraindicaciones: </ion-card-subtitle>
+          <ion-card-content> {{u.contraindicaciones}} </ion-card-content>
         </ion-col>
       </ion-row>
     </ion-card-header>

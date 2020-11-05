@@ -1,11 +1,10 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from "@angular/fire/firestore";
 import { Observable } from "rxjs";
-import { QuiroService } from "../../services/quiro.service";
+// import { QuiroService } from "../../services/quiro.service";
 import { Quiropraxia } from "../../shared/quiropraxia.interface";
 
 @Component({
@@ -16,7 +15,7 @@ import { Quiropraxia } from "../../shared/quiropraxia.interface";
 export class QuiropraxiaPage implements OnInit {
   private quiroCollection: AngularFirestoreCollection<Quiropraxia>;
   quiroItems: Observable<Quiropraxia[]>;
-  constructor(private http: HttpClient, private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore) {
     this.chamarData();
   }
   ngOnInit() {}
