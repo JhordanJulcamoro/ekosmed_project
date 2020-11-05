@@ -1,25 +1,63 @@
 <ion-header>
-  <ion-toolbar *ngIf="user$ | async as user">
-    <ion-title>Olá, <span>{{user.displayName}}</span></ion-title>
-    <ion-buttons slot="end">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar *ngIf="user$ | async as user">
+        <ion-title>Olá, <span>{{user.displayName}}</span></ion-title>
+        <ion-buttons slot="end">
+            <ion-menu-button menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
-    <ion-card-content expand="block">
-      Fale com Ekos sobre as dores nas costas que você tem
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-content expand="block"> O que ê Quiropraxia? </ion-card-content>
-  </ion-card>
-  <ion-card routerLink="/casos-clinicos">
-    <ion-card-content expand="block"> Casos clínicos </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-content expand="block"> Dicas </ion-card-content>
-  </ion-card>
+<ion-content class="ion-padding">
+    <ion-row>
+        <ion-col>
+            <h1><strong>Selecione uma opção</strong></h1>
+        </ion-col>
+        <ion-col>
+            <ion-img class="logo ion-align-self-end" src="../assets/img/logo.PNG" alt="logotipo">
+            </ion-img>
+        </ion-col>
+    </ion-row>
+    <ion-card>
+        <ion-card-content class="card1 text ion-text-center" expand="block">
+            Fale com Ekos sobre suas dores nas costas
+            <ion-img class="robo" src="../assets/img/robo.png" alt="robo">
+            </ion-img>
+            <ion-button class="ekos ion-align-self-center" expand="block" shape="round" color="tertiary">
+                <h2 class="text3">COMEÇAR</h2>
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content class="card2 ion-text-center" expand="block">
+            <ion-row>
+                <ion-col class="text2 ion-align-self-center">
+                    O que é Quiropraxia?
+                </ion-col>
+                <ion-img class="medica" src="../assets/img/health.png" alt="health">
+                </ion-img>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+    <ion-card routerLink="/casos-clinicos">
+        <ion-card-content class="card3 text ion-text-center" expand="block">
+            <ion-row>
+                <ion-col class="text2 ion-align-self-center">
+                    Casos clínicos
+                </ion-col>
+                <ion-img class="medica" src="../assets/img/doctor.png" alt="health">
+                </ion-img>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content class="card4 text ion-text-center" expand="block">
+            <ion-row>
+                <ion-col class="text2 ion-align-self-center">
+                    Dicas
+                </ion-col>
+                <ion-img class="medica" src="../assets/img/healths.png" alt="health">
+                </ion-img>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
