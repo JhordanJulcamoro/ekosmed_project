@@ -1,9 +1,37 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>quiropraxia</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/main">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content fullscreen>
+  <ion-card *ngFor="let u of users">
+    <ion-card-header>
+      <ion-card-title>{{u.username}}</ion-card-title>
+      <ion-card-subtitle>{{u.company.name}}</ion-card-subtitle>
+    </ion-card-header>
+    <img
+      src="https://diarinho.com.br/wp-content/uploads/2019/09/Transe-tudo_Quiropraxia.jpg"
+    />
+    <!-- <img [src]="u.img" alt=""> -->
+    <ion-card-content>
+      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
+      Madison was named the capital of the Wisconsin Territory in 1836. Lorem
+      ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur veniam,
+      earum ex dolore ea iure fugiat corrupti nobis. Labore impedit at veritatis
+      illum, dolores quis reiciendis tempora quaerat eaque fugit.
+    </ion-card-content>
+    <ion-card-content>
+      <ion-card-subtitle>BENEFÍCIOS:</ion-card-subtitle>
+      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
+      Madison was named the capital of the Wisconsin Territory in 1836. Lorem
+      ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur veniam,
+      earum ex dolore ea iure fugiat corrupti nobis. Labore impedit at veritatis
+      illum, dolores quis reiciendis tempora quaerat eaque fugit.
+    </ion-card-content>
+  </ion-card>
 </ion-content>
