@@ -1,35 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-
-export interface Geo {
-  lat: string;
-  lng: string;
-}
-
-export interface Address {
-  street: string;
-  suite: string;
-  city: string;
-  zipcode: string;
-  geo: Geo;
-}
-
-export interface Company {
-  name: string;
-  catchPhrase: string;
-  bs: string;
-}
-
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: Address;
-  phone: string;
-  website: string;
-  company: Company;
-}
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from "@angular/fire/firestore";
+import { Observable } from "rxjs";
+import { QuiroService } from "../../services/quiro.service";
+import { Quiropraxia } from "../../shared/quiropraxia.interface";
 
 @Component({
   selector: "app-quiropraxia",
@@ -37,17 +14,15 @@ export interface User {
   styleUrls: ["./quiropraxia.page.scss"],
 })
 export class QuiropraxiaPage implements OnInit {
-  public question = "";
-  public users: User[];
-
-  constructor(private http: HttpClient) {
-    this.chamarHttp();
+  private quiroCollection: AngularFirestoreCollection<Quiropraxia>;
+  quiroItems: Observable<Quiropraxia[]>;
+  constructor(private http: HttpClient, private afs: AngularFirestore) {
+    this.chamarData();
   }
-
   ngOnInit() {}
 
-  async chamarHttp() {
-    const url = "https://jsonplaceholder.typicode.com/users";
-    this.users = (await this.http.get(url).toPromise()) as User[];
+  chamarData() {
+    this.quiroCollection = this.afs.collection<Quiropraxia>("quiropraxia");
+    this.quiroItems = this.quiroCollection.valueChanges();
   }
 }

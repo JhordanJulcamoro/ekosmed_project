@@ -9,29 +9,16 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-card *ngFor="let u of users">
+  <ion-card *ngFor="let u of quiroItems | async">
+    <img [src]="u.imagen" />
     <ion-card-header>
-      <ion-card-title>{{u.username}}</ion-card-title>
-      <ion-card-subtitle>{{u.company.name}}</ion-card-subtitle>
+      <ion-card-title>{{u.titulo}}</ion-card-title>
+      <!-- <ion-card-subtitle>{{u.descripcion}}</ion-card-subtitle> -->
     </ion-card-header>
-    <img
-      src="https://diarinho.com.br/wp-content/uploads/2019/09/Transe-tudo_Quiropraxia.jpg"
-    />
-    <!-- <img [src]="u.img" alt=""> -->
-    <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
-      Madison was named the capital of the Wisconsin Territory in 1836. Lorem
-      ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur veniam,
-      earum ex dolore ea iure fugiat corrupti nobis. Labore impedit at veritatis
-      illum, dolores quis reiciendis tempora quaerat eaque fugit.
-    </ion-card-content>
+    <ion-card-content>{{u.descripcion}} </ion-card-content>
     <ion-card-content>
       <ion-card-subtitle>BENEFÍCIOS:</ion-card-subtitle>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
-      Madison was named the capital of the Wisconsin Territory in 1836. Lorem
-      ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur veniam,
-      earum ex dolore ea iure fugiat corrupti nobis. Labore impedit at veritatis
-      illum, dolores quis reiciendis tempora quaerat eaque fugit.
+      {{u.beneficios}}
     </ion-card-content>
   </ion-card>
 </ion-content>
