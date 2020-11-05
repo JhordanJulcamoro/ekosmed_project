@@ -61,6 +61,10 @@ const routes: Routes = [
     path: 'quiropraxia',
     loadChildren: () => import('./componentes/quiropraxia/quiropraxia.module').then( m => m.QuiropraxiaPageModule)
   },
+  {
+    path: 'casoclinico',
+    loadChildren: () => import('./componentes/casoclinico/casoclinico.module').then( m => m.CasoclinicoPageModule)
+  },
 
 ];
 
