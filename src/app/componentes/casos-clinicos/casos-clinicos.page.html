@@ -8,4 +8,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <ion-content fullscreen>
+    <ion-card *ngFor="let u of users">
+      <img
+        src="https://diarinho.com.br/wp-content/uploads/2019/09/Transe-tudo_Quiropraxia.jpg"
+      />
+      <ion-card-header>
+        <ion-card-title>{{u.username}}</ion-card-title>
+        <ion-card-subtitle>{{u.company.name}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </ion-content>
+</ion-content>
