@@ -9,12 +9,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let u of casosItems  | async" button>
-    <!-- <ion-card
-    *ngFor="let u of casosItems  | async"
-    button
-    [routerLink]="['/casoclinico',u.id]"
-  > -->
+  <ion-card *ngFor="let u of dicasItems  | async" button>
     <ion-card-header>
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">
@@ -32,34 +27,24 @@
           <ion-card-content> {{u.descripcion}} </ion-card-content>
         </ion-col>
       </ion-row>
-
       <ion-row class="ion-align-items-center">
         <ion-col>
-          <ion-card-subtitle>Sìntomas: </ion-card-subtitle>
+          <ion-card-subtitle>Beneficios: </ion-card-subtitle>
           <ul>
-            <li>{{u.sintomas.sintoma_1}}</li>
-            <li>{{u.sintomas.sintoma_2}}</li>
-            <li>{{u.sintomas.sintoma_3}}</li>
-            <li>{{u.sintomas.sintoma_4}}</li>
+            <li>{{u.beneficios.beneficio_1}}</li>
+            <li>{{u.beneficios.beneficio_2}}</li>
           </ul>
         </ion-col>
       </ion-row>
       <ion-row class="ion-align-items-center">
         <ion-col>
-          <ion-card-subtitle>Tratamientos: </ion-card-subtitle>
-          <ion-card-content> {{u.tratamientos}} </ion-card-content>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-align-items-center">
-        <ion-col>
-          <ion-card-subtitle>Cuidados Importantes: </ion-card-subtitle>
-          <ion-card-content> {{u.cuidadosimportantes}} </ion-card-content>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-align-items-center">
-        <ion-col>
-          <ion-card-subtitle>Contraindicaciones: </ion-card-subtitle>
-          <ion-card-content> {{u.contraindicaciones}} </ion-card-content>
+          <ion-card-subtitle>Pasos: </ion-card-subtitle>
+          <ul>
+            <li>{{u.pasos.paso_1}}</li>
+            <li>{{u.pasos.paso_2}}</li>
+            <li>{{u.pasos.paso_3}}</li>
+            <li>{{u.pasos.paso_4}}</li>
+          </ul>
         </ion-col>
       </ion-row>
     </ion-card-header>

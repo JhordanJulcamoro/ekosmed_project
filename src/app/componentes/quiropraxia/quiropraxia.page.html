@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/main">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card *ngFor="let u of quiroItems | async">
+    <img [src]="u.imagen" />
+    <ion-card-header>
+      <ion-card-title>{{u.titulo}}</ion-card-title>
+      <!-- <ion-card-subtitle>{{u.descripcion}}</ion-card-subtitle> -->
+    </ion-card-header>
+    <ion-card-content>{{u.descripcion}} </ion-card-content>
+    <ion-card-content>
+      <ion-card-subtitle>BENEFÍCIOS:</ion-card-subtitle>
+      {{u.beneficios}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
