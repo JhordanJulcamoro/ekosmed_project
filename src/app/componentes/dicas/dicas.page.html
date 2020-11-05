@@ -1,9 +1,52 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>dicas</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/main">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card *ngFor="let u of dicasItems  | async" button>
+    <ion-card-header>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto">
+          <ion-avatar>
+            <img [src]="u.imagen" alt="" />
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <ion-card-title>{{u.titulo}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-card-subtitle>Descripção: </ion-card-subtitle>
+          <ion-card-content> {{u.descripcion}} </ion-card-content>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-card-subtitle>Beneficios: </ion-card-subtitle>
+          <ul>
+            <li>{{u.beneficios.beneficio_1}}</li>
+            <li>{{u.beneficios.beneficio_2}}</li>
+          </ul>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-card-subtitle>Pasos: </ion-card-subtitle>
+          <ul>
+            <li>{{u.pasos.paso_1}}</li>
+            <li>{{u.pasos.paso_2}}</li>
+            <li>{{u.pasos.paso_3}}</li>
+            <li>{{u.pasos.paso_4}}</li>
+          </ul>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
