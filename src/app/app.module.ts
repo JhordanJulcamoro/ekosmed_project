@@ -13,6 +13,7 @@ import { AngularFireModule } from "@angular/fire";
 import { environment } from "src/environments/environment";
 
 import { HttpClientModule } from "@angular/common/http";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,6 +22,7 @@ import { HttpClientModule } from "@angular/common/http";
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
     HttpClientModule,
   ],
