@@ -65,6 +65,10 @@ const routes: Routes = [
     path: 'casoclinico',
     loadChildren: () => import('./componentes/casoclinico/casoclinico.module').then( m => m.CasoclinicoPageModule)
   },
+  {
+    path: 'dicas',
+    loadChildren: () => import('./componentes/dicas/dicas.module').then( m => m.DicasPageModule)
+  },
 
 ];
 
