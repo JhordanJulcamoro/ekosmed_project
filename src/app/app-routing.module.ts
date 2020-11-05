@@ -57,6 +57,18 @@ const routes: Routes = [
     path: 'casos-clinicos',
     loadChildren: () => import('./componentes/casos-clinicos/casos-clinicos.module').then( m => m.CasosClinicosPageModule)
   },
+  {
+    path: 'quiropraxia',
+    loadChildren: () => import('./componentes/quiropraxia/quiropraxia.module').then( m => m.QuiropraxiaPageModule)
+  },
+  {
+    path: 'casoclinico',
+    loadChildren: () => import('./componentes/casoclinico/casoclinico.module').then( m => m.CasoclinicoPageModule)
+  },
+  {
+    path: 'dicas',
+    loadChildren: () => import('./componentes/dicas/dicas.module').then( m => m.DicasPageModule)
+  },
 
 ];
 
