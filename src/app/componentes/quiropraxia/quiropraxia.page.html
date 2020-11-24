@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="tertiary">
+  <ion-toolbar color="">
     <ion-buttons slot="start">
       <ion-button routerLink="/main">
         <ion-icon name="arrow-back-outline"></ion-icon>
@@ -15,10 +15,16 @@
       <ion-card-title>{{u.titulo}}</ion-card-title>
       <!-- <ion-card-subtitle>{{u.descripcion}}</ion-card-subtitle> -->
     </ion-card-header>
-    <ion-card-content>{{u.descripcion}} </ion-card-content>
-    <ion-card-content>
-      <ion-card-subtitle>BENEFÍCIOS:</ion-card-subtitle>
-      {{u.beneficios}}
+    <ion-card-content class="ion-text-justify card-text-subtitle"
+      >{{u.descripcion}}
     </ion-card-content>
+    <ion-col>
+      <ion-card-subtitle class="ion-text-justify card-text-title"
+        >BENEFÍCIOS:</ion-card-subtitle
+      >
+      <ion-card-content class="ion-text-justify card-text-subtitle">
+        {{u.beneficios}}
+      </ion-card-content>
+    </ion-col>
   </ion-card>
 </ion-content>
