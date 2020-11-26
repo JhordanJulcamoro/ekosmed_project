@@ -69,6 +69,10 @@ const routes: Routes = [
     path: 'dicas',
     loadChildren: () => import('./componentes/dicas/dicas.module').then( m => m.DicasPageModule)
   },
+  {
+    path: 'chatbot',
+    loadChildren: () => import('./componentes/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
+  },
 
 ];
 
