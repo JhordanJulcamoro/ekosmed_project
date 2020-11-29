@@ -8,56 +8,60 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-    <ion-row>
-        <ion-col>
-            <h1><strong>Selecione uma opção</strong></h1>
+  <ion-row>
+    <ion-col>
+      <h1><strong>Selecione uma opção</strong></h1>
+    </ion-col>
+    <ion-col>
+      <ion-img
+        class="logo ion-align-self-end"
+        src="../assets/img/logo.PNG"
+        alt="logotipo"
+      >
+      </ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-card>
+    <ion-card-content class="card1 text ion-text-center" expand="block">
+      Fale com Ekos sobre suas dores nas costas
+      <ion-img class="robo" src="../assets/img/robo.svg" alt="robo"> </ion-img>
+      <ion-button
+        class="ekos ion-align-self-center"
+        expand="block"
+        shape="round"
+        color="tertiary"
+      >
+        <h2 class="text3">COMEÇAR</h2>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card routerLink="/quiropraxia">
+    <ion-card-content class="card2 ion-text-center" expand="block">
+      <ion-row>
+        <ion-col class="text2 ion-align-self-center">
+          O que é Quiropraxia?
         </ion-col>
-        <ion-col>
-            <ion-img class="logo ion-align-self-end" src="../assets/img/logo.PNG" alt="logotipo">
-            </ion-img>
-        </ion-col>
-    </ion-row>
-    <ion-card>
-        <ion-card-content class="card1 text ion-text-center" expand="block">
-            Fale com Ekos sobre suas dores nas costas
-            <ion-img class="robo" src="../assets/img/robo.png" alt="robo">
-            </ion-img>
-            <ion-button class="ekos ion-align-self-center" expand="block" shape="round" color="tertiary">
-                <h2 class="text3">COMEÇAR</h2>
-            </ion-button>
-        </ion-card-content>
-    </ion-card>
-    <ion-card>
-        <ion-card-content class="card2 ion-text-center" expand="block">
-            <ion-row>
-                <ion-col class="text2 ion-align-self-center">
-                    O que é Quiropraxia?
-                </ion-col>
-                <ion-img class="medica" src="../assets/img/health.png" alt="health">
-                </ion-img>
-            </ion-row>
-        </ion-card-content>
-    </ion-card>
-    <ion-card routerLink="/casos-clinicos">
-        <ion-card-content class="card3 text ion-text-center" expand="block">
-            <ion-row>
-                <ion-col class="text2 ion-align-self-center">
-                    Casos clínicos
-                </ion-col>
-                <ion-img class="medica" src="../assets/img/doctor.png" alt="health">
-                </ion-img>
-            </ion-row>
-        </ion-card-content>
-    </ion-card>
-    <ion-card>
-        <ion-card-content class="card4 text ion-text-center" expand="block">
-            <ion-row>
-                <ion-col class="text2 ion-align-self-center">
-                    Dicas
-                </ion-col>
-                <ion-img class="medica" src="../assets/img/healths.png" alt="health">
-                </ion-img>
-            </ion-row>
-        </ion-card-content>
-    </ion-card>
+        <ion-img class="medica" src="../assets/img/health.svg" alt="health">
+        </ion-img>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card routerLink="/casos-clinicos">
+    <ion-card-content class="card3 text ion-text-center" expand="block">
+      <ion-row>
+        <ion-col class="text2 ion-align-self-center"> Casos clínicos </ion-col>
+        <ion-img class="medica" src="../assets/img/doctor.png" alt="health">
+        </ion-img>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card routerLink="/dicas">
+    <ion-card-content class="card4 text ion-text-center" expand="block">
+      <ion-row>
+        <ion-col class="text2 ion-align-self-center"> Dicas </ion-col>
+        <ion-img class="medica" src="../assets/img/healths.svg" alt="health">
+        </ion-img>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,9 +1,88 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>casos-clinicos</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/main">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card *ngFor="let u of casosItems  | async" button>
+    <ion-card-header>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto">
+          <!-- <ion-avatar> -->
+          <img [src]="u.imagen" alt="" />
+          <!-- </ion-avatar> -->
+        </ion-col>
+        <ion-col class="ion-text-uppercase">
+          <ion-card-title>{{u.titulo}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center card-body">
+        <ion-col>
+          <ion-card-subtitle class="card-text-title"
+            >Descripção:
+          </ion-card-subtitle>
+          <ion-card-content class="ion-text-justify card-text-subtitle">
+            {{u.descripcion}}
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
 
+      <ion-row class="ion-align-items-center card-body">
+        <ion-col>
+          <ion-card-subtitle class="ion-text-justify card-text-title"
+            >Sìntomas:
+          </ion-card-subtitle>
+          <ul>
+            <li class="ion-text-justify card-text-subtitle">
+              {{u.sintomas.sintoma_1}}
+            </li>
+            <li class="ion-text-justify card-text-subtitle">
+              {{u.sintomas.sintoma_2}}
+            </li>
+            <li class="ion-text-justify card-text-subtitle">
+              {{u.sintomas.sintoma_3}}
+            </li>
+            <li class="ion-text-justify card-text-subtitle">
+              {{u.sintomas.sintoma_4}}
+            </li>
+          </ul>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center card-body">
+        <ion-col>
+          <ion-card-subtitle class="ion-text-justify card-text-title"
+            >Tratamientos:
+          </ion-card-subtitle>
+          <ion-card-content class="ion-text-justify card-text-subtitle">
+            {{u.tratamientos}}
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center card-body">
+        <ion-col>
+          <ion-card-subtitle class="ion-text-justify card-text-title"
+            >Cuidados Importantes:
+          </ion-card-subtitle>
+          <ion-card-content class="ion-text-justify card-text-subtitle">
+            {{u.cuidadosimportantes}}
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center card-body">
+        <ion-col>
+          <ion-card-subtitle class="ion-text-justify card-text-title"
+            >Contraindicaciones:
+          </ion-card-subtitle>
+          <ion-card-content class="ion-text-justify card-text-subtitle">
+            {{u.contraindicaciones}}
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
