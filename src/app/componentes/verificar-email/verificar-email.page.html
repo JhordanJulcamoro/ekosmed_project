@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBackLogin()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Obrigado por cadastrar-se</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user$ | async as user"
+  ><ion-row>
+    <ion-col>
+      <p>
+        Lhe enviamos um e-mail para
+        <strong>{{user.email}}</strong>
+        com um link de confimação para que possa realizar a validação, verifique
+        sua conta e clique no link.
+      </p>
+      <p>Se a verificação não chegou, clique no próximo botão.</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button color="danger" (click)="onSendEmail()" expand="block">
+        Enviar novo link de verificação
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

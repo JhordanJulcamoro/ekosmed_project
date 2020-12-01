@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/casos-clinicos"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>Caso clínico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <div *ngIf="user">
+    <ion-avatar style="margin: auto">
+      <img [src]="user.avatar_url" />
+    </ion-avatar>
+    <h2>{{user.name}}</h2>
+    <ion-text color="medium"><h3>{{user.login}}</h3></ion-text>
+    <ion-row>
+      <ion-col> <strong>{{user.followers}}</strong> seguidores </ion-col>
+      <ion-col> <strong>{{user.following}}</strong> seguindo </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
