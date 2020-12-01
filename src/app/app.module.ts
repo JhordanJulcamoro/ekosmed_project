@@ -10,10 +10,10 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireModule } from "@angular/fire";
-import { environment } from "src/environments/environment";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { environment } from "src/environments/environment";
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
