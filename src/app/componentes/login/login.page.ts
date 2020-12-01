@@ -59,7 +59,7 @@ export class LoginPage implements OnInit {
       }
     } catch (error) {
       this.authSvc.errorsCase(error);
-      //console.log("Error->", error);
+      console.log("Error->", error);
     }
   }
 

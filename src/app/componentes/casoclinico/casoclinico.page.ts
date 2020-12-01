@@ -23,7 +23,7 @@ export class CasoclinicoPage implements OnInit {
 
   ngOnInit() {
     const username = this.route.snapshot.paramMap.get("username");
-    const url = "http://api.github.com/users/" + username;
+    const url = "//api.github.com/users/" + username;
     (this.http.get(url).toPromise() as Promise<User>).then(
       (res) => (this.user = res)
     );
