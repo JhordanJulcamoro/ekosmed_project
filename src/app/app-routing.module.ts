@@ -73,7 +73,15 @@ const routes: Routes = [
   {
     path: 'chatbot',
     loadChildren: () => import('./componentes/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
+  },  {
+    path: 'configuracao',
+    loadChildren: () => import('./componentes/configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
   },
+  {
+    path: 'ajudafeedback',
+    loadChildren: () => import('./componentes/ajudafeedback/ajudafeedback.module').then( m => m.AjudafeedbackPageModule)
+  },
+
  
 
 ];
