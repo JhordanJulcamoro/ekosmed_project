@@ -12,7 +12,7 @@ export class ChatbotPage implements OnInit {
 
   ngOnInit() {
     this.vidUrl = this.domSatizer.bypassSecurityTrustResourceUrl(
-      "https://console.dialogflow.com/api-client/demo/embedded/62dcc198-5fca-4928-8b3a-de5fe78c1508"
+      "//console.dialogflow.com/api-client/demo/embedded/62dcc198-5fca-4928-8b3a-de5fe78c1508"
     );
   }
 }

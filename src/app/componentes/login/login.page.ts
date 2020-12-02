@@ -58,8 +58,8 @@ export class LoginPage implements OnInit {
         this.redirectUser(isVerified);
       }
     } catch (error) {
-      this.authSvc.errorsCase(error);
-      //console.log("Error->", error);
+      console.log("Error->", error);
+      // this.authSvc.errorsCase(error);
     }
   }
 

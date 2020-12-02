@@ -7,7 +7,7 @@ export const environment = {
   firebaseConfig: {
     apiKey: "AIzaSyB7MEwO7YyJLU_nue55asfBgYHEhKWs5bM",
     authDomain: "ekosmed-58431.firebaseapp.com",
-    databaseURL: "https://ekosmed-58431.firebaseio.com",
+    databaseURL: "//ekosmed-58431.firebaseio.com",
     projectId: "ekosmed-58431",
     storageBucket: "ekosmed-58431.appspot.com",
     messagingSenderId: "928698046609",
