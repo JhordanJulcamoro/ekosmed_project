@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Configuração</ion-title>
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
@@ -9,36 +9,32 @@
 
 
 <ion-content>
-  <section>
-    <ion-icon name="person"></ion-icon>
-    <h1>Configuração do Perfil</h1>
-  </section>
-  <ion-grid>
-    <ion-row>
-      <ion-col col-6>
-        <ion-card text-center padding>
-          <ion-icon name="person"></ion-icon>
-          <h2>Perfil</h2>
-        </ion-card>
-      </ion-col>
-      <ion-col col-6>
-        <ion-card text-center padding>
-          <ion-icon name="person"></ion-icon>
-          <h2>Dicas Pessoais</h2>
-        </ion-card>
-      </ion-col>
-      <ion-col col-6>
-        <ion-card text-center padding>
-          <ion-icon name="person"></ion-icon>
-          <h2>Consultas - Ekos</h2>
-        </ion-card>
-      </ion-col>
-      <ion-col col-6>
-        <ion-card text-center padding>
-          <ion-icon name="person"></ion-icon>
-          <h2>Compartilhar</h2>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    
+  <ion-card>
+    <ion-card-content class="card1" expand="block">
+      <ion-row>
+        <ion-col><h1>PERFIL</h1></ion-col>
+        <ion-icon name="settings-sharp" size="large"></ion-icon>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content class="card2" expand="block">
+      <ion-row>
+        <ion-col><h1>CONSULTAS EKO</h1></ion-col>
+      <ion-icon name="search-sharp" size="large"></ion-icon>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content class="card3" expand="block">
+      <ion-row>
+        <ion-col><h1>DICAS PESSOAIS</h1></ion-col>
+        <ion-icon name="medkit-sharp" size="large"></ion-icon>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
