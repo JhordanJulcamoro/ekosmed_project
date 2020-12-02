@@ -1,5 +1,6 @@
-<ion-header>
+<ion-header class="topscreen">
   <ion-toolbar>
+    <ion-title>Casos Clínicos</ion-title>
     <ion-buttons slot="start">
       <ion-button routerLink="/main">
         <ion-icon name="arrow-back-outline"></ion-icon>
@@ -23,10 +24,9 @@
       </ion-row>
       <ion-row class="ion-align-items-center card-body">
         <ion-col>
-          <ion-card-subtitle class="card-text-title"
-            >Descripção:
+          <ion-card-subtitle>Descrição:
           </ion-card-subtitle>
-          <ion-card-content class="ion-text-justify card-text-subtitle">
+          <ion-card-content>
             {{u.descripcion}}
           </ion-card-content>
         </ion-col>
@@ -34,20 +34,18 @@
 
       <ion-row class="ion-align-items-center card-body">
         <ion-col>
-          <ion-card-subtitle class="ion-text-justify card-text-title"
-            >Sìntomas:
-          </ion-card-subtitle>
+          <ion-card-subtitle>Sìntomas:</ion-card-subtitle>
           <ul>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.sintomas.sintoma_1}}
             </li>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.sintomas.sintoma_2}}
             </li>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.sintomas.sintoma_3}}
             </li>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.sintomas.sintoma_4}}
             </li>
           </ul>
@@ -56,7 +54,7 @@
       <ion-row class="ion-align-items-center card-body">
         <ion-col>
           <ion-card-subtitle class="ion-text-justify card-text-title"
-            >Tratamientos:
+            >Tratamentos:
           </ion-card-subtitle>
           <ion-card-content class="ion-text-justify card-text-subtitle">
             {{u.tratamientos}}
@@ -76,7 +74,7 @@
       <ion-row class="ion-align-items-center card-body">
         <ion-col>
           <ion-card-subtitle class="ion-text-justify card-text-title"
-            >Contraindicaciones:
+            >Contra-indicações:
           </ion-card-subtitle>
           <ion-card-content class="ion-text-justify card-text-subtitle">
             {{u.contraindicaciones}}

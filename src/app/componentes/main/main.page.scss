@@ -1,9 +1,17 @@
 ion-header {
   ion-toolbar {
-    --background: #0396a6;
+    --background: linear-gradient(
+      90deg,
+      
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160)100%
+    );
     background: linear-gradient(90deg, #0396a6 0%, #0396a6 100%);
     box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
     color: #ffffff;
+    font-style: bold;
+    
   }
 }
 
@@ -23,7 +31,12 @@ ion-header {
 }
 
 ion-content {
-  --ion-background-color: #f4fbfcee;
+  --background: linear-gradient(
+    90deg,
+    rgb(3, 150, 166) 0%,
+    rgb(5, 151, 175) 45%,
+    rgb(6, 115, 160) 100%
+  );
 }
 
 h1 {
@@ -75,4 +88,9 @@ h2 {
   width: 240px;
   margin: auto;
   text-transform: capitalize;
+}
+
+
+ion-menu-button{
+  color: white;
 }

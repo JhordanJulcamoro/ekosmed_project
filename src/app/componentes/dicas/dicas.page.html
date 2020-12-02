@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar color="">
+    <ion-title>Dicas para sua saúde</ion-title>
     <ion-buttons slot="start">
       <ion-button routerLink="/main">
         <ion-icon name="arrow-back-outline"></ion-icon>
@@ -23,24 +24,18 @@
       </ion-row>
       <ion-row class="ion-align-items-center card-body">
         <ion-col>
-          <ion-card-subtitle class="ion-text-justify card-text-title"
-            >Descripção:
-          </ion-card-subtitle>
-          <ion-card-content class="ion-text-justify card-text-subtitle">
-            {{u.descripcion}}
-          </ion-card-content>
+          <ion-card-title>Descrição:</ion-card-title>
+          <ion-card-content>{{u.descripcion}}</ion-card-content>
         </ion-col>
       </ion-row>
       <ion-row class="ion-align-items-center card-body">
         <ion-col>
-          <ion-card-subtitle class="ion-text-justify card-text-title"
-            >Beneficios:
-          </ion-card-subtitle>
+          <ion-card-subtitle>Benefícios:</ion-card-subtitle>
           <ul>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.beneficios.beneficio_1}}
             </li>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.beneficios.beneficio_2}}
             </li>
           </ul>
@@ -48,20 +43,18 @@
       </ion-row>
       <ion-row class="ion-align-items-center card-body">
         <ion-col>
-          <ion-card-subtitle class="ion-text-justify card-text-title"
-            >Pasos:
-          </ion-card-subtitle>
+          <ion-card-title>Passos:</ion-card-title>
           <ul>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.pasos.paso_1}}
             </li>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.pasos.paso_2}}
             </li>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.pasos.paso_3}}
             </li>
-            <li class="ion-text-justify card-text-subtitle">
+            <li>
               {{u.pasos.paso_4}}
             </li>
           </ul>

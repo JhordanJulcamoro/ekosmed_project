@@ -1,26 +1,35 @@
 ion-header {
   ion-toolbar {
-    --background: #0396a6;
+    --background: linear-gradient(
+      90deg,
+      
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160)100%
+    );
     background: linear-gradient(90deg, #0396a6 0%, #0396a6 100%);
     box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
     color: #ffffff;
+    font-style: bold;
   }
 }
 
 ion-content {
   --background: linear-gradient(
-    90deg,
-    rgba(3, 150, 166) 0%,
-    rgba(3, 150, 166) 35%,
-    rgba(3, 150, 166) 100%
-  );
+      90deg,
+      
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160)100%
+    );
   ion-card {
     // background: rgba(255, 251, 251, 0.71);
     --background: linear-gradient(
       90deg,
-      rgba(255, 251, 251, 0.71) 0%,
-      rgba(255, 251, 251, 0.71) 35%,
-      rgba(255, 251, 251, 0.71) 100%
+      
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160)100%
     );
     border-radius: 25px;
   }
@@ -31,12 +40,6 @@ ion-content {
   margin-left: 15px;
 }
 
-.card-body {
-  background: rgba(3, 150, 166, 0.28);
-  border-radius: 15px;
-  padding: 1px 10px;
-  margin: 2px 5px 10px 2px;
-}
 ion-col {
   --background: rgba(238, 230, 230, 0.1);
   padding: 0;
@@ -55,4 +58,38 @@ ion-col {
 
 .title {
   font-size: larger;
+}
+
+ion-icon{
+
+  color:white;
+}
+
+
+
+ion-card-title{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: large;
+}
+
+ion-card-content{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+
+ion-card-subtitle{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ion-text{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li{
+  color: #ffffff;
 }

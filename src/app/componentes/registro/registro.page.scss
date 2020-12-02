@@ -1,5 +1,37 @@
 ion-content {
-    --ion-background-color: #f4fbfcee;
+    --background: linear-gradient(
+    90deg,
+    rgb(232, 254, 255) 0%,
+    rgb(210, 248, 246) 45%,
+    rgb(192, 238, 243) 100%
+  );
+}
+
+ion-row {
+    --background: linear-gradient(
+    90deg,
+    rgb(232, 254, 255) 0%,
+    rgb(210, 248, 246) 45%,
+    rgb(192, 238, 243) 100%
+  );
+}
+
+form{
+    --background: linear-gradient(
+    90deg,
+    rgb(232, 254, 255) 0%,
+    rgb(210, 248, 246) 45%,
+    rgb(192, 238, 243) 100%
+  );
+}
+
+ion-item{
+    --background: linear-gradient(
+    90deg,
+    rgb(232, 254, 255) 0%,
+    rgb(210, 248, 246) 45%,
+    rgb(192, 238, 243) 100%
+  );
 }
 
 ion-img {
@@ -9,7 +41,8 @@ ion-img {
 }
 
 h1 {
-    padding-left: 20px;
+    font-weight: bold;
+    text-align: center;
     color: #1b9fc0dc;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { ModalController } from '@ionic/angular';
 import { Observable } from "rxjs";
 import { AuthService } from "../../services/auth.service";
 import { User } from "../../shared/user.interface";
@@ -23,4 +24,7 @@ export class MainPage implements OnInit {
       console.log("Error->", error);
     }
   }
+
+  
 }
+
