@@ -36,9 +36,10 @@ export class AppComponent {
     try {
       await this.authSvc.logout();
       this.router.navigate(["/init"]);
-      console.log("Cerrando sesión");
+      console.log("Encerrando Sessão");
     } catch (error) {
       console.log("Error->", error);
     }
   }
+  
 }

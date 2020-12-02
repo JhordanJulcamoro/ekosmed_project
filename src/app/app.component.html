@@ -10,14 +10,21 @@
         </ion-label>
       </div>
       <ion-list class="menu-items" lines="none">
+        <ion-menu-toggle>
         <ion-item class="active">
           <ion-icon name="exit-outline"></ion-icon>Home
         </ion-item>
-        <ion-item>
-          <ion-icon name="settings-outline" routerLink="/quiropraxia"></ion-icon>Configurações</ion-item>
-        <ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item (click)="onConfiguracao">
+          <ion-icon name="settings-outline" slot="start"></ion-icon>Configurações
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerlink="/ajudafeedback">
           <ion-icon name="help-outline"></ion-icon>Ajuda e feedback
         </ion-item>
+        </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item (click)="onlogout()">
             <ion-icon name="exit-outline"></ion-icon>Fechar sessão
