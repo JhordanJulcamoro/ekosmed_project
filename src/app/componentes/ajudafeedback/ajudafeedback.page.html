@@ -1,10 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ajudafeedback</ion-title>
+    <ion-title>Ajuda e Feedback</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content> 
+
+<H1>Desenvolvedores</H1>
+
+<ion-card>
+  <ion-card-content class="card text ion-text-center" expand="block" >
+    <a  href="#" onclick="window.open('https://github.com/JhordanJulcamoro', '_system', 'location=yes'); return false;"><h1>Jhordan Julcamoro</h1></a>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-content class="card text ion-text-center" expand="block">
+    <a  href="#" onclick="window.open('https://github.com/kel-carmona', '_system', 'location=yes'); return false;"><h1>Kelvin Carmona</h1></a>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-content class="card text ion-text-center" expand="block">
+    <a  href="#" onclick="window.open('https://github.com/LeonardoCarletti', '_system', 'location=yes'); return false;"><h1>Leonardo Carletti</h1></a>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-content class="card text ion-text-center" expand="block">
+    <a  href="#" onclick="window.open('https://google.com', '_system', 'location=yes'); return false;"><h1>Margorie</h1></a>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content class="card text ion-text-center" expand="block">
+    <ion-button (click)="sendEmail">Enviar e-mail de Ajuda</ion-button>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

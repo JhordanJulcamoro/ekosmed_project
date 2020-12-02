@@ -1,0 +1,81 @@
+ion-header {
+    ion-toolbar {
+      --background: linear-gradient(
+        90deg,
+        
+        rgb(3, 150, 166) 0%,
+        rgb(5, 151, 175) 45%,
+        rgb(6, 115, 160)100%
+      );
+      background: linear-gradient(90deg, #0396a6 0%, #0396a6 100%);
+      box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+      color: #ffffff;
+      font-style: bold;
+      
+    }
+  }
+  
+  .logo {
+    width: 150px;
+    padding-left: 80px;
+  }
+  
+  .robo {
+    width: 200px;
+    margin: auto;
+  }
+  
+  .medica {
+    width: 120px;
+    padding-left: 40px;
+  }
+  
+  ion-content {
+    --background: linear-gradient(
+      90deg,
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160) 100%
+    );
+  }
+  
+  h1 {
+    padding-left: 14px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+      color: #ffffff;
+      font-style: bold;
+      text-align: center;
+  }
+  
+  
+  .text2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+  }
+  
+  .card {
+    background-color: rgb(127, 193, 219);
+    font-weight: bolder;
+  }
+
+  .card h1{
+    font-weight: bolder;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  a{
+      text-decoration: none;
+  }
+    
+  
+  ion-menu-button{
+    color: white;
+  }
+
+  ion-icon {
+       zoom:3.5;
+       display:block;
+    }
