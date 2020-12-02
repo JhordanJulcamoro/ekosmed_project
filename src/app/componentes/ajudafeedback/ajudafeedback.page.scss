@@ -15,21 +15,7 @@ ion-header {
     }
   }
   
-  .logo {
-    width: 150px;
-    padding-left: 80px;
-  }
-  
-  .robo {
-    width: 200px;
-    margin: auto;
-  }
-  
-  .medica {
-    width: 120px;
-    padding-left: 40px;
-  }
-  
+   
   ion-content {
     --background: linear-gradient(
       90deg,
@@ -55,17 +41,17 @@ ion-header {
     font-weight: bolder;
   }
   
-  .card {
-    background-color: rgb(127, 193, 219);
-    font-weight: bolder;
+  ion-card{
+    --background: linear-gradient(
+      90deg,
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160) 100%
+    );
+    color: #ffffff;
+    font-style: bold;
   }
 
-  .card h1{
-    font-weight: bolder;
-    color: #ffffff;
-    font-size: 20px;
-    text-decoration: none;
-  }
   a{
       text-decoration: none;
   }
@@ -75,7 +61,6 @@ ion-header {
     color: white;
   }
 
-  ion-icon {
-       zoom:3.5;
-       display:block;
-    }
+ion-button{
+    background-color: transparent;
+}
