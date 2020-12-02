@@ -53,7 +53,8 @@ const routes: Routes = [
     loadChildren: () =>
       import("./componentes/init/init.module").then((m) => m.InitPageModule),
     canActivate: [NoAuthGuard],
-  },  {
+  },
+  {
     path: 'casos-clinicos',
     loadChildren: () => import('./componentes/casos-clinicos/casos-clinicos.module').then( m => m.CasosClinicosPageModule)
   },
@@ -72,7 +73,16 @@ const routes: Routes = [
   {
     path: 'chatbot',
     loadChildren: () => import('./componentes/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
+  },  {
+    path: 'configuracao',
+    loadChildren: () => import('./componentes/configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
   },
+  {
+    path: 'ajudafeedback',
+    loadChildren: () => import('./componentes/ajudafeedback/ajudafeedback.module').then( m => m.AjudafeedbackPageModule)
+  },
+
+ 
 
 ];
 

@@ -5,21 +5,27 @@
       <div class="header-content">
         <img src="../assets/img/user_avatar.svg" alt="" />
         <ion-label>
-          <!-- <h2>{{ user.displayName}}</h2> -->
-          <h2>Ekos User</h2>
+          <h2>{{ user.displayName }}</h2>
           <p>Usuario</p>
         </ion-label>
       </div>
       <ion-list class="menu-items" lines="none">
-        <ion-item class="active">
-          <ion-icon name="exit-outline"></ion-icon>Home
-        </ion-item>
-        <ion-item>
-          <ion-icon name="settings-outline"></ion-icon>Configurações
-        </ion-item>
-        <ion-item>
-          <ion-icon name="help-outline"></ion-icon>Ajuda e feedback
-        </ion-item>
+        <ion-menu-toggle>
+          <ion-item routerLink="main" routerLinkActive="active-link">
+            <ion-icon name="exit-outline"></ion-icon>Home
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="configuracao" routerLinkActive="active-link">
+            <ion-icon name="settings-outline" slot="start"></ion-icon
+            >Configurações
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="ajudafeedback" routerLinkActive="active-link">
+            <ion-icon name="help-outline"></ion-icon>Ajuda e feedback
+          </ion-item>
+        </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item (click)="onlogout()">
             <ion-icon name="exit-outline"></ion-icon>Fechar sessão

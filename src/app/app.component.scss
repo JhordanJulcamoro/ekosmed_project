@@ -56,13 +56,23 @@
     margin-bottom: 10px;
   }
 
-  .active {
-    border-left: 5px solid;
-    color: #0673a0;
-    padding-left: 15px;
+  // .active {
+  //   border-left: 5px solid;
+  //   color: #0673a0;
+  //   padding-left: 15px;
 
-    ion-icon {
-      color: #0673a0;
-    }
+  //   ion-icon {
+  //     color: #0673a0;
+  //   }
+  // }
+}
+
+.active-link {
+  border-left: 5px solid;
+  color: #0673a0;
+  padding-left: 15px;
+
+  ion-icon {
+    color: #0673a0;
   }
 }
