@@ -1,5 +1,7 @@
 {
   "name": "ekosMed_Project",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
