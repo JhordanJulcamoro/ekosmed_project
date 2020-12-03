@@ -1,0 +1,66 @@
+ion-header {
+    ion-toolbar {
+      --background: linear-gradient(
+        90deg,
+        
+        rgb(3, 150, 166) 0%,
+        rgb(5, 151, 175) 45%,
+        rgb(6, 115, 160)100%
+      );
+      background: linear-gradient(90deg, #0396a6 0%, #0396a6 100%);
+      box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+      color: #ffffff;
+      font-style: bold;
+      
+    }
+  }
+  
+   
+  ion-content {
+    --background: linear-gradient(
+      90deg,
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160) 100%
+    );
+  }
+  
+  h1 {
+    padding-left: 14px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+      color: #ffffff;
+      font-style: bold;
+      text-align: center;
+  }
+  
+  
+  .text2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+  }
+  
+  ion-card{
+    --background: linear-gradient(
+      90deg,
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160) 100%
+    );
+    color: #ffffff;
+    font-style: bold;
+  }
+
+  a{
+      text-decoration: none;
+  }
+    
+  
+  ion-menu-button{
+    color: white;
+  }
+
+ion-button{
+    background-color: transparent;
+}

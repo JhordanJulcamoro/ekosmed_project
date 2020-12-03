@@ -1,0 +1,47 @@
+ion-header {
+    ion-toolbar {
+      --background: linear-gradient(
+        90deg,
+        
+        rgb(3, 150, 166) 0%,
+        rgb(5, 151, 175) 45%,
+        rgb(6, 115, 160)100%
+      );
+      background: linear-gradient(90deg, #0396a6 0%, #0396a6 100%);
+      box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+      color: #ffffff;
+      font-style: bold;
+      
+    }
+  }
+
+  ion-content {
+    --background: linear-gradient(
+      90deg,
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160) 100%
+    );
+  }
+
+ion-menu-button{
+    color: white;
+    
+  }
+
+ion-fab-button{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+ion-card{
+    --background: linear-gradient(
+      90deg,
+      rgb(3, 150, 166) 0%,
+      rgb(5, 151, 175) 45%,
+      rgb(6, 115, 160) 100%
+    );
+    color: #ffffff;
+    font-style: bold;
+  }
+  

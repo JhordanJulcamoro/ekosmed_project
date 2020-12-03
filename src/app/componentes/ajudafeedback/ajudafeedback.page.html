@@ -1,10 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ajudafeedback</ion-title>
-    <ion-buttons slot="start">
+    <ion-title>Ajuda e Feedback</ion-title>
+    <ion-buttons slot="end">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content> 
+
+<H1>Desenvolvedores</H1>
+
+<ion-card>
+  <ion-card-content expand="block">
+    <ion-row>
+      <ion-col><a  href="#" onclick="window.open('https://github.com/JhordanJulcamoro', '_system', 'location=yes'); return false;"><h1>Jhordan Julcamoro</h1></a></ion-col>
+      <ion-icon name="logo-github" size="large"></ion-icon>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content expand="block">
+    <ion-row>
+      <ion-col> <a  href="#" onclick="window.open('https://github.com/kel-carmona', '_system', 'location=yes'); return false;"><h1>Kelvin Carmona</h1></a></ion-col>
+      <ion-icon name="logo-github" size="large"></ion-icon>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content expand="block">
+    <ion-row>
+      <ion-col><a  href="#" onclick="window.open('https://github.com/LeonardoCarletti', '_system', 'location=yes'); return false;"><h1>Leonardo Carletti</h1></a></ion-col>
+      <ion-icon name="logo-github" size="large"></ion-icon>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content class="card text ion-text-center" expand="block">
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="sendEmail">Enviar e-mail de Ajuda</ion-button>
+      </ion-col>
+
+    </ion-row>
+    
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

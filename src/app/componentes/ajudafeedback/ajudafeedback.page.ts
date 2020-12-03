@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 @Component({
   selector: 'app-ajudafeedback',
@@ -7,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjudafeedbackPage implements OnInit {
 
-  constructor() { }
+  constructor(public emailComposer:EmailComposer){}
+    
+   sendEmail(){
+    let email = {
+      to: 'ekosmed@gmail.com',
+      cc: 'ekosmed@gmail.com',
+      subject: 'Ajuda Com EkosMed',
+      body: 'Solicito ajuda com EkosMed!',
+      isHtml: true
+    };
+
+    this.emailComposer.open(email);
+
+   }
+   
+
 
   ngOnInit() {
   }
